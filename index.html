@@ -1,0 +1,114 @@
+<!DOCTYPE html> 
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Quiz Interactif</title>
+    <style>
+        /* Style pour le menu de navigation */
+        nav {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline; 
+            margin-left: 15px; 
+        }
+
+        nav ul li button {
+            padding: 10px 15px;
+            cursor: pointer; 
+            border: none; 
+            background-color: #007BFF; 
+            color: white; 
+            border-radius: 5px;
+        }
+
+        nav ul li button:hover {
+            background-color: #0056b3; /* Couleur au survol */
+        }
+    </style>
+</head>
+<body>
+
+    
+    <div id="logo-container">
+        <img src="logo.jpeg" alt="Logo Quiz Interactif" id="quiz-logo">
+    </div>
+
+    <!-- Menu de navigation en haut à droite -->
+    <nav>
+        <ul>
+            <li><button id="home-button">Home</button></li>
+            <li><button id="about-button">About</button></li>
+            <li><button id="services-button">Services</button></li>
+            <li><button id="contact-button">Contact</button></li>
+        </ul>
+    </nav>
+
+    <!-- Section d'inscription -->
+    <div id="signup-container"> 
+        <h2>Inscription</h2>
+        <form id="signup-form">
+            <label for="signup-username">Nom d'utilisateur :</label>
+            <input type="text" id="signup-username" name="signup-username" required>
+            
+            <label for="signup-email">Email :</label>
+            <input type="email" id="signup-email" name="signup-email" required>
+            
+            <label for="signup-password">Mot de passe :</label>
+            <input type="password" id="signup-password" name="signup-password" required>
+            
+            <button type="submit">S'inscrire</button>
+        </form>
+        <p>Vous avez déjà un compte ? <a href="#" id="show-login">Connectez-vous ici</a></p>
+    </div>
+
+    <!-- Section de connexion (cachée par défaut) -->
+    <div id="login-container" style="display: none;">
+        <h2>Connexion</h2>
+        <form id="login-form">
+            <label for="login-username">Nom d'utilisateur :</label>
+            <input type="text" id="login-username" name="login-username" required>
+            
+            <label for="login-password">Mot de passe :</label>
+            <input type="password" id="login-password" name="login-password" required>
+            
+            <button type="submit">Se connecter</button>
+        </form>
+        <p>Vous n'avez pas de compte ? <a href="#" id="show-signup">Inscrivez-vous ici</a></p>
+    </div>
+
+    <!-- Section de sélection du thème du quiz (cachée par défaut) -->
+    <div id="theme-selection" style="display: none;">
+        <h1>Choisissez un thème</h1>
+        <select id="theme-select">
+            <option value="" disabled selected>-- Sélectionnez un thème --</option>
+            <option value="0">HTML/CSS</option>
+            <option value="1">Anglais</option>
+            <option value="2">JavaScript</option>
+            <option value="3">Python</option>
+        </select>
+        <button id="start-button">Commencer le quiz</button>
+    </div>
+
+    <!-- Conteneur du quiz (caché par défaut) -->
+    <div id="quiz-container" style="display: none;">
+        <h1>Quiz Interactif</h1>
+        <div id="question"></div>
+        <div id="options"></div>
+        <button id="next-button" style="display: none;">Suivant</button>
+        <div id="explanation"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
